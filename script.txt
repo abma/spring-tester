@@ -1,0 +1,111 @@
+[GAME]
+{
+	HostIP=;
+	HostPort=8452;
+	IsHost=1;
+	MyPlayerName=abma;
+
+	ModHash=445874408;
+	MapHash=3490937712;
+	Mapname=DeltaSiegeDry;
+	GameType=Zero-K v0.5.1 testmod;
+
+	startpostype=3;
+	[mapoptions]
+	{
+	}
+	[modoptions]
+	{
+		disablemapdamage=0;
+		fixedallies=1;
+		mo_comgate=0;
+		mo_coop=0;
+		mo_enemywrecks=1;
+		mo_greenfields=0;
+		mo_noowner=0;
+		mo_noshare=1;
+		mo_nowrecks=0;
+		mo_preventdraw=0;
+		mo_progmines=0;
+		shareddynamicalliancevictory=0;
+		maxspeed=2;
+		maxunits=1500;
+		minspeed=0.5;
+		startenergy=1000;
+		startmetal=1000;
+		deathmode=com;
+		gamemode=0;
+		teamdeathmode=allyzerounits;
+	}
+	NumRestrictions=0;
+	[RESTRICT]
+	{
+	}
+
+	NumPlayers=1;
+	NumUsers=3;
+
+	[PLAYER2]
+	{
+		Name=abma;
+		CountryCode=;
+		Spectator=1;
+		Rank=0;
+		IsFromDemo=0;
+		Team=0;
+	}
+	[AI0]
+	{
+		Name=Bot1;
+		ShortName=NullAI;
+		Version=0.1;
+		Team=0;
+		IsFromDemo=0;
+		Host=2;
+		[Options]
+		{
+		}
+	}
+	[AI1]
+	{
+		Name=Bot2;
+		ShortName=NullAI;
+		Version=0.1;
+		Team=1;
+		IsFromDemo=0;
+		Host=2;
+		[Options]
+		{
+		}
+	}
+
+	[TEAM0]
+	{
+		TeamLeader=2;
+		StartPosX=863;
+		StartPosZ=803;
+		AllyTeam=0;
+		RGBColor=0.976471 1 0;
+		Side=Robots;
+		Handicap=0;
+	}
+	[TEAM1]
+	{
+		TeamLeader=2;
+		StartPosX=9544;
+		StartPosZ=755;
+		AllyTeam=1;
+		RGBColor=0.509804 0.498039 1;
+		Side=Robots;
+		Handicap=0;
+	}
+
+	[ALLYTEAM0]
+	{
+		NumAllies=0;
+	}
+	[ALLYTEAM1]
+	{
+		NumAllies=0;
+	}
+}
