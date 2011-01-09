@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include <unistd.h>
+#include <getopt.h>
+
 
 
 /*
@@ -22,13 +24,62 @@ params:
 	test		test (subfolder) to run
 
 */
+
+enum{
+	OPT_GAME=0,
+	OPT_SPRING,
+	OPT_ARGS,
+	OPT_SPEED,
+	OPT_MAXFRAMES,
+	OPT_SIZE
+};
+
+static struct option long_options[] = {
+	{ "game"      , 1, 0, OPT_GAME },
+	{ "spring"    , 1, 0, OPT_SPRING },
+	{ "args"      , 1, 0, OPT_ARGS },
+	{ "speed"     , 1, 0, OPT_SPEED },
+	{ "maxframes" , 1, 0, OPT_MAXFRAMES },
+	{0            , 0, 0, 0},
+};
+
 int main(int argc, char **argv){
+
 	std::string game = "Zero-K v0.5.1";
 	std::string exec = "spring-headless";
 	std::string args = "";
 	std::string script = "script.txt";
 	int speed = 200;
 	int frames = 9000;
+
+	while(true){
+		int option_index = 0;
+		int c = getopt_long(argc, argv, "",long_options, &option_index);
+		if (c == -1)
+			break;
+		switch(c){
+			case OPT_GAME:{
+				game = optarg;
+				break;
+			}
+			case OPT_SPRING:{
+				exec = optarg;
+				break;
+			}
+			case OPT_ARGS:{
+				args = optarg;
+				break;
+			}
+			case OPT_SPEED:{
+				sscanf(optarg,"%d",&speed);
+				break;
+			}
+			case OPT_MAXFRAMES:{
+				sscanf(optarg,"%d",&frames);
+				break;
+			}
+		}
+	}
 
 	std::cout << "Creating testmod... \n";
 	std::ofstream testmod;
