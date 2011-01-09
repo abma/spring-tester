@@ -72,6 +72,7 @@ int main(int argc, char **argv){
 	testmod << "		Spring.SendCommands(\"cheat\")\n";
 	testmod << "		Spring.SendCommands(\"setmaxspeed "<< speed <<"\")\n";
 	testmod << "		Spring.SendCommands(\"setminspeed "<< speed <<"\")\n";
+	testmod << "		Spring.SendCommands(\"setminspeed 0.1\")\n"; //allow lower speeds if cpu is to slow
 	testmod << "	end\n";
 	testmod << "	if n==10 then\n";
 	testmod << "		Spring.SendCommands(\"give all 0\")\n";
